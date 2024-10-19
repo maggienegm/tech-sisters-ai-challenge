@@ -52,7 +52,7 @@ def ai_response(history):
         str: The assistant's generated response.
     """
     # Read the prompt template from a file
-    prompt = open("prompt.txt", "r").read() 
+    prompt = open("./prompt.txt", "r").read() 
 
     # Initialize the AI model with the specified model name and the formatted chat history
     model = genai.GenerativeModel(model_name="gemini-1.5-flash", system_instruction=prompt)
