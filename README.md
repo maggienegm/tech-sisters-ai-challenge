@@ -50,10 +50,14 @@ Make sure you have the following installed:
        ```
 
 4. **Install Requirements** 📜
+    - Before installing the necessary packages, make sure to navigate to the `/app` directory. You can do this by running the following command in your terminal:
+        ```bash
+        cd app
+        ```
    - Install the necessary packages by running:
-     ```bash
-     pip install -r requirements.txt
-     ```
+        ```bash
+        pip install -r requirements.txt
+        ```
 
 ### Running the Streamlit App 🚀
 
