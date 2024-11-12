@@ -11,7 +11,6 @@ def task_input(task_manager):
         st.error(error)
       else:
         subtasks = generate_subtasks(new_task)
-        # subtasks = ["asdfasdfasdfa", "werwerwerwer", "43534534543"]
         index = task_manager.get_task_index(new_task)
         task_manager.add_subtasks_to_task(index, subtasks)
         st.rerun()
@@ -19,7 +18,9 @@ def task_input(task_manager):
       st.error("Task cannot be empty!")
 
 def task_component(task_manager, task_index, task):
-  cols = st.columns([0.2, 4, 1, 1])
+  st.write("---")
+
+  cols = st.columns([0.05, 0.80, 0.1, 0.1])
 
   if f"task_completed_{task_index}" not in st.session_state:
     st.session_state[f"task_completed_{task_index}"] = task.completed
@@ -34,17 +35,17 @@ def task_component(task_manager, task_index, task):
     task.toggle_completed()
     st.rerun()
 
-  if cols[2].button("Edit", key=f"edit_task_{task_index}"):
+  if cols[2].button("✏️", key=f"edit_task_{task_index}"):
     st.session_state["edit_task_index"] = task_index
 
-  if cols[3].button("Delete", key=f"delete_task_{task_index}"):
+  if cols[3].button("🗑️", key=f"delete_task_{task_index}"):
     task_manager.delete_task(task_index)
     st.session_state["edit_task_index"] = -1
     st.session_state["edit_subtask_index"] = -1
     st.rerun()
 
 def subtask_component(task_manager, task_index, subtask_index, subtask):
-  cols = st.columns([0.25, 0.2, 3.75, 1, 1])
+  cols = st.columns([0.2, 0.25, 3.8, 0.5, 0.5])
 
   if f"subtask_completed_{subtask_index}" not in st.session_state:
     st.session_state[f"subtask_completed_{subtask_index}"] = subtask.completed
@@ -59,11 +60,11 @@ def subtask_component(task_manager, task_index, subtask_index, subtask):
     subtask.toggle_completed()
     st.rerun()
 
-  if cols[3].button("Edit", key=f"edit_task_{task_index}_subtask_{subtask_index}"):
+  if cols[3].button("✏️", key=f"edit_task_{task_index}_subtask_{subtask_index}"):
     st.session_state["edit_task_index"] = task_index
     st.session_state["edit_subtask_index"] = subtask_index
 
-  if cols[4].button("Delete", key=f"delete_task_{task_index}_subtask_{subtask_index}"):
+  if cols[4].button("🗑️", key=f"delete_task_{task_index}_subtask_{subtask_index}"):
     task_manager.delete_subtask(task_index, subtask_index)
     st.session_state["edit_task_index"] = -1
     st.session_state["edit_subtask_index"] = -1

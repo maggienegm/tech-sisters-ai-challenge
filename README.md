@@ -66,6 +66,6 @@ Make sure you have the following installed:
 
 ## Future Improvements
 
-- **UI Framework**: While Streamlit is great for rapid prototyping, it refreshes the entire app on each interaction, which can hinder the user experience. To address this, I would use a frontend framework like React or Vue.js, which would offer better control over UI components, efficient state management, and a more smoother, dynamic user interface without full page reloads.
+- **UI Framework**: Streamlit is excellent for rapid prototyping, but it has some limitations. These include a small component library, limited flexibility over UI customization and responsiveness, and full page reloads with every component interaction. These can all negatively affect the user experience. To overcome these challenges, I would use a frontend framework like React or Vue.js, which provides a wider range of UI components, better state management, and a smoother, more dynamic interface without requiring full page reloads.
 
 - **Storage**: Currently, Streamlit's ```session_state``` doesn't persist data across sessions, meaning that users lose their progress after refreshing the page. To address this, I would implement persistent storage using a backend database or local storage to ensure data is retained between page sessions.

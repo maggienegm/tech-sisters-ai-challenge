@@ -17,8 +17,8 @@ if "edit_subtask_index" not in st.session_state:
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-st.title("Tiny Tasks")
-st.subheader("_Turn Big Tasks into Tiny Tasks with the Power of Gen AI_")
+st.title("🌱 Tiny Tasks")
+st.subheader("_Turn Big Tasks into Tiny Tasks with the Power of Generative AI_")
 
 ui.task_input(task_manager)
 
